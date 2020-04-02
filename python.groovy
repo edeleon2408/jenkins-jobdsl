@@ -1,4 +1,4 @@
-project_name = "jenkins-pipeline-python"
+project_name = "jenkins-docker-war-pipeline"
 repo = "https://github.com/edeleon2408/jenkins-docker-war.git"
 repo_name = "jenkins-docker-war"
 
