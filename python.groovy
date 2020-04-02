@@ -1,5 +1,5 @@
 project_name = "jenkins-docker-war-pipeline"
-repo = "https://github.com/edeleon2408/jenkins-docker-war.git"
+repo = "git@github.com:edeleon2408/jenkins-jobdsl.git";
 repo_name = "jenkins-docker-war"
 
 pipelineJob(project_name){
