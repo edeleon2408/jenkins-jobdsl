@@ -5,7 +5,7 @@ repo_name = "jenkins-docker-war"
 pipelineJob(project_name){
 	definition{
 		triggers{
-			scm('H/1 * * * *')
+			scm('* * * * *')
 		}
 		
 		cpsScm{
