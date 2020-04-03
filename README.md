@@ -1,6 +1,6 @@
 # Proyecto Docker War #
 
-Este Proyecto nos permite crear una imagen con toncat y un war desplegado, es un proyecto spring boot rest api.
+Este Proyecto nos permite crear una imagen con tomcat y un war desplegado, es un proyecto spring boot rest api.
 
 # Proyecto JobDsl #
 
