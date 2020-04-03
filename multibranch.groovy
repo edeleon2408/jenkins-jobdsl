@@ -4,6 +4,7 @@ multibranchPipelineJob('multi-branch-docker-war') {
     }
     branchSources {
         git {
+			id('jenkins-docker-war-id')
             remote("https://github.com/edeleon2408/jenkins-docker-war.git")
         }
     }
