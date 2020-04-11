@@ -1,4 +1,4 @@
-multibranchPipelineJob('multi-branch-docker-war') {
+multibranchPipelineJob('multi-branch-docker-spring-boot-war') {
 	triggers {
         periodic(1)
     }
