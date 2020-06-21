@@ -23,7 +23,7 @@ id('angular-docker-id')
 listView('Enrolamiento'){
 description('Vista que contendrá todos los jobs del proyecto')
 jobs {
-regex('/.*job.*/')
+regex(/.*Enrolamiento.*/)
 }
 columns {
 status()
