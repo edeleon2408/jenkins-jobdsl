@@ -1,16 +1,22 @@
-folder('Enrolamiento'){
-displayName('Enrolamiento')
+project_name_multibranch = "Enrolamiento-api/mb-enrolamiento-api"
+repo_files_groovy = "https://github.com/edeleon2408/enrolamiento-api.git";
+folder_name = "Enrolamiento-api"
+view_name = "Enrolamiento-api"
+
+
+folder(folder_name){
+displayName(folder_name)
 description('Folder para proyectos de Enrolamientos')
 }
 
-multibranchPipelineJob('Enrolamiento/mb-enrolamiento-a-angular-docker') {
+multibranchPipelineJob(project_name_multibranch) {
 triggers {
         periodic(1)
     }
     branchSources {
         git {
 id('enrolamiento-api-id')
-            remote("https://github.com/edeleon2408/enrolamiento-api.git")
+            remote(repo_files_groovy)
         }
     }
     orphanedItemStrategy {
@@ -20,8 +26,8 @@ id('enrolamiento-api-id')
     }
 }
 
-listView('Enrolamiento'){
-description('Vista que contendrá todos los jobs del proyecto')
+listView(view_name){
+description('Vista que contendrá todas las tareas del proyecto Enrolamiento-api')
 jobs {
 regex(/.*Enrolamiento.*/)
 }
