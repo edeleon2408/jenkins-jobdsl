@@ -9,8 +9,8 @@ triggers {
     }
     branchSources {
         git {
-id('angular-docker-id')
-            remote("https://github.com/edeleon2408/angular-docker.git")
+id('enrolamiento-api-id')
+            remote("https://github.com/edeleon2408/enrolamiento-api.git")
         }
     }
     orphanedItemStrategy {
