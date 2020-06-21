@@ -3,7 +3,7 @@ displayName('Enrolamiento')
 description('Folder para proyectos de Enrolamientos')
 }
 
-multibranchPipelineJob('Enrolamiento/mb-project-a-angular-docker') {
+multibranchPipelineJob('Enrolamiento/mb-enrolamiento-a-angular-docker') {
 triggers {
         periodic(1)
     }
@@ -23,7 +23,7 @@ id('angular-docker-id')
 listView('Enrolamiento'){
 description('Vista que contendrá todos los jobs del proyecto')
 jobs {
-regex('/.*Enrolamiento.*/')
+regex('/.*enrolamiento.*/')
 }
 columns {
 status()
