@@ -1,4 +1,4 @@
-folder('Project-a'){
-displayName('Project A')
-description('Folder for project a')
+folder('Enrolamiento'){
+displayName('Enrolamiento')
+description('Folder para proyectos de Enrolamientos')
 }
