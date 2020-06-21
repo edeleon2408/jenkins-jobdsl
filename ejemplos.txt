@@ -1,0 +1,66 @@
+project_name = "Project-a/project-a-aspnet-api"
+repo = "https://github.com/edeleon2408/jenkins-docker-war.git";
+repo_name = "jenkins-docker-war"
+
+/*Creamos el folder*/
+folder('Project-a'){
+displayName('Project A')
+description('Folder for project a')
+}
+
+/*Creamos nuestro job*/
+pipelineJob(project_name){
+definition{
+triggers{
+scm('* * * * *')
+}
+
+cpsScm{
+scm{
+git{
+remote{
+name(repo_name)
+url(repo)
+}
+}
+scriptPath("Jenkinsfile")
+}
+}
+}
+}
+
+/*Creamos nuestro job MultiBranch*/
+multibranchPipelineJob('mb-project-a-angular-docker') {
+triggers {
+        periodic(1)
+    }
+    branchSources {
+        git {
+id('angular-docker-id')
+            remote("https://github.com/edeleon2408/angular-docker.git")
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(20)
+        }
+    }
+}
+
+/*Creamos la Vista que contendra nuestros jobs*/
+listView('Nombre-Proyecto'){
+description('Vista que contendrá todos los jobs del proyecto')
+jobs {
+regex('/.*project-a.*/')
+}
+columns {
+status()
+weather()
+name()
+lastSuccess()
+lastFailure()
+lastDuration()
+buildButton()
+}
+
+}
