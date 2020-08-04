@@ -1,22 +1,43 @@
-project_name_multibranch = "Enrolamiento-api/mb-enrolamiento-api"
-repo_files_groovy = "https://github.com/edeleon2408/enrolamiento-api.git";
-folder_name = "Enrolamiento-api"
-view_name = "Enrolamiento-api"
+enrollment_api_multibranch = "Enrollment/Enrollment-api"
+enrollment_experian_multibranch = "Enrollment/Enrollment-experian"
+repo_enrollment_api = "https://github.com/edeleon2408/enrolamiento-api.git";
+repo_enrollment_experian = "https://github.com/edeleon2408/enrolamiento-api.git";
+folder_name = "Enrollment"
+view_name = "Enrollment"
 
 
 folder(folder_name){
 displayName(folder_name)
-description('Folder para proyectos de Enrolamientos')
+description('Folder para proyectos de Enrolamiento')
 }
 
-multibranchPipelineJob(project_name_multibranch) {
+//Multibranch para el API de Enrollment
+multibranchPipelineJob(enrollment_api_multibranch) {
 triggers {
         periodic(1)
     }
     branchSources {
         git {
-id('enrolamiento-api-id')
-            remote(repo_files_groovy)
+id('enrollment-api-id')
+            remote(repo_enrollment_api)
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(20)
+        }
+    }
+}
+
+//Multibranch para el servicio de pasarela de Experian
+multibranchPipelineJob(enrollment_experian_multibranch) {
+triggers {
+        periodic(1)
+    }
+    branchSources {
+        git {
+id('enrollment-experian-id')
+            remote(repo_enrollment_experian)
         }
     }
     orphanedItemStrategy {
@@ -27,9 +48,9 @@ id('enrolamiento-api-id')
 }
 
 listView(view_name){
-description('Vista que contendrá todas las tareas del proyecto Enrolamiento-api')
+description('Vista que contendrá todas las tareas del proyecto Enrollment')
 jobs {
-regex(/.*Enrolamiento.*/)
+regex(/.*Enrollment.*/)
 }
 columns {
 status()
