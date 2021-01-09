@@ -2,9 +2,9 @@ validador_api_otp_multibranch = "Validador-api-otp/ms-api-otp"
 validador_admin_otp_multibranch = "Validador-api-otp/admin-otp"
 api_preguntas_multibranch = "Api-preguntas/api-preguntas"
 
-repo_validador_api_otp = "https://github.com/edeleon2408/validador-api-otp.git";
+repo_validador_api_otp = "";
 repo_validador_admin_otp = "https://github.com/edeleon2408/validador-api-otp.git";
-repo_api_preguntas = "https://github.com/edeleon2408/validador-api-otp.git";
+repo_api_preguntas = "";
 
 folder_name_validador_otp = "Validador-api-otp"
 folder_name_api_preguntas = "Api-preguntas"
