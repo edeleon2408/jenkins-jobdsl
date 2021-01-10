@@ -82,7 +82,8 @@ multibranchPipelineJob(preguntas_api_multibranch) {
 listView(view_name_develop){
         description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
         jobs {
-                regex(/.*Validador.*Preguntas.*/)
+                //regex(/.*Validador.*Preguntas.*/)
+                regex '(Validador | Preguntas ).*'
         }
         columns {
                 status()
