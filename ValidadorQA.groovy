@@ -1,15 +1,18 @@
-validador_otp_api_multibranch = "qa-validador-otp-api/otp-api"
-validador_admin_otp_multibranch = "qa-validador-otp-api/otp-admin"
-validador_preguntas_api_multibranch = "qa-validador-preguntas-api/preguntas-api"
+validador_otp_api_multibranch = "qa-validador-otp/otp-api"
+validador_otp_admin_multibranch = "qa-validador-otp/otp-admin"
+validador_otp_admin_conf_api_multibranch = "qa-validador-otp/otp-admin-conf-api"
+validador_preguntas_api_multibranch = "qa-validador-preguntas/preguntas-api"
 
 repo_validador_otp_api = "";
-repo_validador_admin_otp = "";
+repo_validador_otp_admin = "";
+repo_validador_otp_admin_conf_api = "";
 repo_validador_preguntas_api = "";
 
-folder_name_validador_otp = "qa-validador-otp-api"
-folder_name_validador_preguntas_api = "qa-validador-preguntas-api"
+folder_name_validador_otp = "qa-validador-otp"
+folder_name_validador_preguntas = "qa-validador-preguntas"
 
-view_name_develop = "QA"
+view_name_qaelop = "QA"
+//view_name_api_preguntas = "Api-preguntas"
 
 //Folder para el Proyecto Validador OTP
 folder(folder_name_validador_otp){
@@ -18,9 +21,9 @@ folder(folder_name_validador_otp){
 }
 
 //Folder para el Proyecto Api Preguntas
-folder(folder_name_validador_preguntas_api){
-        displayName(folder_name_validador_preguntas_api)
-        description('Folder para proyectos de Preguntas Api')
+folder(folder_name_validador_preguntas){
+        displayName(folder_name_validador_preguntas)
+        description('Folder para proyectos de Validador Preguntas Api')
 }
 
 //Multibranch para el OTP API
@@ -42,14 +45,14 @@ multibranchPipelineJob(validador_otp_api_multibranch) {
 }
 
 //Multibranch para Admin OTP
-multibranchPipelineJob(validador_admin_otp_multibranch) {
+multibranchPipelineJob(validador_otp_admin_multibranch) {
     triggers {
         periodic(1)
     }
     branchSources {
         git {
-            id('qa-validador-admin-otp-id')
-            remote(repo_validador_admin_otp)
+            id('qa-validador-otp-admin-id')
+            remote(repo_validador_otp_admin)
         }
     }
     orphanedItemStrategy {
@@ -58,6 +61,25 @@ multibranchPipelineJob(validador_admin_otp_multibranch) {
         }
     }
 }
+
+//Multibranch para OTP Admin Configuración API
+multibranchPipelineJob(validador_otp_admin_conf_api_multibranch) {
+    triggers {
+        periodic(1)
+    }
+    branchSources {
+        git {
+            id('qa-validador-otp-admin-conf-api-id')
+            remote(repo_validador_otp_admin_conf_api)
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(20)
+        }
+    }
+}
+
 
 //Multibranch para Preguntas Api
 multibranchPipelineJob(validador_preguntas_api_multibranch) {
@@ -78,7 +100,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
 }
 
 //Vista para los Proyectos del ambiente de desarrollo
-listView(view_name_develop){
+listView(view_name_qaelop){
         description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
         jobs {
                 regex(/.*qa.*/)
