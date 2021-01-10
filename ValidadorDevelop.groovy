@@ -11,7 +11,7 @@ repo_validador_preguntas_api = "";
 folder_name_validador_otp = "dev-validador-otp"
 folder_name_validador_preguntas = "dev-validador-preguntas"
 
-view_name_develop = "Develop"
+view_name = "Develop"
 //view_name_api_preguntas = "Api-preguntas"
 
 //Folder para el Proyecto Validador OTP
@@ -100,7 +100,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
 }
 
 //Vista para los Proyectos del ambiente de desarrollo
-listView(view_name_develop){
+listView(view_name){
         description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
         jobs {
                 regex(/.*dev.*/)
