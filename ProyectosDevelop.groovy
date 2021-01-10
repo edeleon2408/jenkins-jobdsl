@@ -1,13 +1,13 @@
 validador_otp_api_multibranch = "Validador-otp-api/otp-api"
 validador_admin_otp_multibranch = "Validador-otp-api/otp-admin"
-preguntas_api_multibranch = "Preguntas-api/preguntas-api"
+validador_preguntas_api_multibranch = "Validador-preguntas-api/preguntas-api"
 
 repo_validador_otp_api = "";
 repo_validador_admin_otp = "https://github.com/edeleon2408/validador-api-otp.git";
-repo_preguntas_api = "";
+repo_validador_preguntas_api = "";
 
 folder_name_validador_otp = "Validador-otp-api"
-folder_name_preguntas_api = "Preguntas-api"
+folder_name_validador_preguntas_api = "Validador-preguntas-api"
 
 view_name_develop = "Develop"
 //view_name_api_preguntas = "Api-preguntas"
@@ -19,7 +19,7 @@ folder(folder_name_validador_otp){
 }
 
 //Folder para el Proyecto Api Preguntas
-folder(folder_name_preguntas_api){
+folder(folder_name_validador_preguntas_api){
         displayName(folder_name_preguntas_api)
         description('Folder para proyectos de Preguntas Api')
 }
@@ -61,14 +61,14 @@ multibranchPipelineJob(validador_admin_otp_multibranch) {
 }
 
 //Multibranch para Preguntas Api
-multibranchPipelineJob(preguntas_api_multibranch) {
+multibranchPipelineJob(validador_preguntas_api_multibranch) {
     triggers {
         periodic(1)
     }
     branchSources {
         git {
             id('preguntas-api-id')
-            remote(repo_preguntas_api)
+            remote(repo_validador_preguntas_api)
         }
     }
     orphanedItemStrategy {
@@ -82,8 +82,7 @@ multibranchPipelineJob(preguntas_api_multibranch) {
 listView(view_name_develop){
         description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
         jobs {
-                //regex(/.*Validador.*Preguntas.*/)
-                regex '(Validador | Preguntas ).*'
+                regex(/.*Validador.*/)
         }
         columns {
                 status()
