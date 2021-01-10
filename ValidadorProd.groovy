@@ -100,7 +100,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
 
 //Vista para los Proyectos del ambiente de desarrollo
 listView(view_name){
-        description('Vista que contendrá todas las tareas del ambiente de producción para cualquier proyecto')
+        description('Vista que contendrá todas las tareas del ambiente de Producción para cualquier proyecto')
         jobs {
                 regex(/.*prod.*/)
         }
