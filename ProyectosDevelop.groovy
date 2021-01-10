@@ -20,7 +20,7 @@ folder(folder_name_validador_otp){
 
 //Folder para el Proyecto Api Preguntas
 folder(folder_name_validador_preguntas_api){
-        displayName(folder_name_preguntas_api)
+        displayName(folder_name_validador_preguntas_api)
         description('Folder para proyectos de Preguntas Api')
 }
 
