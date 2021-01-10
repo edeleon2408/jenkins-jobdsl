@@ -1,13 +1,13 @@
-validador_otp_api_multibranch = "Validador-otp-api/otp-api"
-validador_admin_otp_multibranch = "Validador-otp-api/otp-admin"
-validador_preguntas_api_multibranch = "Validador-preguntas-api/preguntas-api"
+validador_otp_api_multibranch = "dev-validador-otp-api/otp-api"
+validador_admin_otp_multibranch = "dev-validador-otp-api/otp-admin"
+validador_preguntas_api_multibranch = "dev-validador-preguntas-api/preguntas-api"
 
 repo_validador_otp_api = "";
 repo_validador_admin_otp = "https://github.com/edeleon2408/validador-api-otp.git";
 repo_validador_preguntas_api = "";
 
-folder_name_validador_otp = "Validador-otp-api"
-folder_name_validador_preguntas_api = "Validador-preguntas-api"
+folder_name_validador_otp = "dev-validador-otp-api"
+folder_name_validador_preguntas_api = "dev-validador-preguntas-api"
 
 view_name_develop = "Develop"
 //view_name_api_preguntas = "Api-preguntas"
@@ -31,7 +31,7 @@ multibranchPipelineJob(validador_otp_api_multibranch) {
     }
     branchSources {
         git {
-            id('validador-otp-api-id')
+            id('dev-validador-otp-api-id')
             remote(repo_validador_otp_api)
         }
     }
@@ -49,7 +49,7 @@ multibranchPipelineJob(validador_admin_otp_multibranch) {
     }
     branchSources {
         git {
-            id('validador-admin-otp-id')
+            id('dev-validador-admin-otp-id')
             remote(repo_validador_admin_otp)
         }
     }
@@ -67,7 +67,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
     }
     branchSources {
         git {
-            id('preguntas-api-id')
+            id('dev-validador-preguntas-api-id')
             remote(repo_validador_preguntas_api)
         }
     }
@@ -82,7 +82,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
 listView(view_name_develop){
         description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
         jobs {
-                regex(/.*Validador.*/)
+                regex(/.*dev.*/)
         }
         columns {
                 status()
