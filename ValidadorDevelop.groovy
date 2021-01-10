@@ -4,7 +4,7 @@ validador_otp_admin_conf_api_multibranch = "dev-validador-otp/otp-admin-conf-api
 validador_preguntas_api_multibranch = "dev-validador-preguntas/preguntas-api"
 
 repo_validador_otp_api = "";
-repo_validador_otp_admin = "https://github.com/edeleon2408/validador-api-otp.git";
+repo_validador_otp_admin = "https://github.com/edeleon2408/validador-otp.git";
 repo_validador_otp_admin_conf_api = "";
 repo_validador_preguntas_api = "";
 
