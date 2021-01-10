@@ -101,7 +101,7 @@ multibranchPipelineJob(validador_preguntas_api_multibranch) {
 
 //Vista para los Proyectos del ambiente de desarrollo
 listView(view_name){
-        description('Vista que contendrá todas las tareas del ambiente de desarrollo para cualquier proyecto')
+        description('Vista que contendrá todas las tareas del ambiente de QA para cualquier proyecto')
         jobs {
                 regex(/.*qa.*/)
         }
